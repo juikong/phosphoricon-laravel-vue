@@ -44,10 +44,12 @@ function updateSelection(id: number, checked: boolean) {
         </header>
         <div>
             <div class="overflow-x-auto">
-                <table class="table-auto w-full">
-                    <thead class="text-sm text-slate-500 border-b border-slate-200">
+                <table class="w-full table-auto">
+                    <thead
+                        class="border-b border-slate-200 text-sm text-slate-500"
+                    >
                         <tr>
-                            <th class="px-2 py-3 w-px">
+                            <th class="w-px px-2 py-3">
                                 <div class="flex items-center">
                                     <label class="inline-flex">
                                         <span class="sr-only">
@@ -62,38 +64,32 @@ function updateSelection(id: number, checked: boolean) {
                                 </div>
                             </th>
                             <th class="px-2 py-3">
-                                <div class="font-semibold text-left">
-                                    Name
-                                </div>
+                                <div class="text-left font-semibold">Name</div>
                             </th>
-                            <th class="px-2 py-3 w-1/4">
-                                <div class="font-semibold text-left">
+                            <th class="w-1/4 px-2 py-3">
+                                <div class="text-left font-semibold">
                                     Description
                                 </div>
                             </th>
-                            <th class="px-2 py-3 w-16">
-                                <div class="font-semibold text-left">
-                                    Icon
-                                </div>
+                            <th class="w-16 px-2 py-3">
+                                <div class="text-left font-semibold">Icon</div>
                             </th>
                             <th class="px-2 py-3">
-                                <div class="font-semibold text-left">
-                                    Sort
-                                </div>
+                                <div class="text-left font-semibold">Sort</div>
                             </th>
                             <th class="px-2 py-3">
-                                <div class="font-semibold text-left">
+                                <div class="text-left font-semibold">
                                     Status
                                 </div>
                             </th>
                             <th class="px-2 py-3">
-                                <div class="font-semibold text-left">
+                                <div class="text-left font-semibold">
                                     Actions
                                 </div>
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="text-sm divide-y divide-slate-200">
+                    <tbody class="divide-y divide-slate-200 text-sm">
                         <CategoriesTableItem
                             v-for="category in categories"
                             :key="category.id"

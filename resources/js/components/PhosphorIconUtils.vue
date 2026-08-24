@@ -76,11 +76,7 @@ const extraPaths = computed<string[]>(() => {
                         : undefined
                 "
             />
-            <path
-                v-for="(path, index) in extraPaths"
-                :key="index"
-                :d="path"
-            />
+            <path v-for="(path, index) in extraPaths" :key="index" :d="path" />
         </g>
     </svg>
 </template>
