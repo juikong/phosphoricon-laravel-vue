@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use PhosphorIcon;
 
 class IconController extends Controller
 {
-    public function index()
+    public function index(): JsonResponse
     {
-        return PhosphorIcon::getData();
+        return response()->json(PhosphorIcon::getData());
     }
 }

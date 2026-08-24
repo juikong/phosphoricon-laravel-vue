@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use PhosphorIcon;
 
 class CategoryController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): JsonResponse
     {
         $categories = Category::get();
         $categoriesWithIcon = PhosphorIcon::getIcon($categories);
@@ -16,11 +17,12 @@ class CategoryController extends Controller
         return response()->json($categoriesWithIcon);
     }
 
-    public function update(Request $request)
+    public function update(Request $request): JsonResponse
     {
-        $category = Category::find($request->id);
-        $category->phosphor_icon_id = $request->phosphor_icon_id;
-        $category->save();
+        $category = Category::query()->findOrFail($request->integer('id'));
+        $category->update([
+            'phosphor_icon_id' => $request->integer('phosphor_icon_id'),
+        ]);
 
         return response()->json(['message' => 'Category Updated Successfully!']);
     }
