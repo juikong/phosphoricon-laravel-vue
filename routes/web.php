@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'Categories')->name('categories');
+Route::inertia('/', 'Categories')->name('home');
 
-Route::inertia('/welcome', 'Welcome')->name('home');
+Route::inertia('/welcome', 'Welcome')->name('welcome');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');
